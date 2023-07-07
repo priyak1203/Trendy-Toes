@@ -1,5 +1,14 @@
+import { Contact, FeaturedProducts, Hero, Services } from '../components';
+
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <main>
+      <Hero />
+      <FeaturedProducts />
+      <Services />
+      <Contact />
+    </main>
+  );
 };
 
 export default HomePage;
