@@ -4,8 +4,11 @@ import CartButtons from './CartButtons';
 import { styled } from 'styled-components';
 import Logo from './Logo';
 import { FaBars } from 'react-icons/fa';
+import { useProductsContext } from '../context/products_context';
+
 const Navbar = () => {
   const myUser = true;
+  const { openSidebar } = useProductsContext();
 
   return (
     <Wrapper>
@@ -14,7 +17,7 @@ const Navbar = () => {
           <Link to="/">
             <Logo />
           </Link>
-          <button type="button" className="nav-toggle">
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
           </button>
         </div>

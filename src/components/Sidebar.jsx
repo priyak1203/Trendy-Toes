@@ -4,16 +4,18 @@ import { FaTimes } from 'react-icons/fa';
 import { links } from '../utils/constants';
 import { Link } from 'react-router-dom';
 import CartButtons from './CartButtons';
+import { useProductsContext } from '../context/products_context';
 
 const Sidebar = () => {
   const myUser = false;
-  const isSidebarOpen = false;
+  const { isSidebarOpen, closeSidebar } = useProductsContext();
+
   return (
     <Wrapper>
       <aside className={isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}>
         <div className="sidebar-header">
           <Logo className="logo" />
-          <button type="button" className="close-btn">
+          <button type="button" className="close-btn" onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
