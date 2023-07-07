@@ -8,11 +8,13 @@ import {
   Products,
   SingleProduct,
 } from './pages';
+import { Footer, Navbar, Sidebar } from './components';
 
 function App() {
   return (
     <Router>
-      <h1>Trendy Toes - Shoe Store</h1>
+      <Navbar />
+      <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
@@ -22,6 +24,7 @@ function App() {
         <Route path="checkout" element={<Checkout />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
