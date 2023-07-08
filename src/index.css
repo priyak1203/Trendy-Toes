@@ -71,6 +71,10 @@ ul {
 a {
   text-decoration: none;
 }
+hr {
+  border: none;
+  border-top: 1px solid var(--clr-grey-8);
+}
 
 h1,
 h2,

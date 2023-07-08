@@ -8,7 +8,7 @@ maxPrice = Math.max(...maxPrice);
 const initialState = {
   filtered_products: products,
   all_products: products,
-  grid_view: false,
+  grid_view: true,
   sort: 'price-lowest',
   filters: {
     text: '',
