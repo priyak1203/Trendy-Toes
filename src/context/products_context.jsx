@@ -3,7 +3,6 @@ import reducer from '../reducers/products_reducer';
 import { SIDEBAR_CLOSE, SIDEBAR_OPEN } from '../actions';
 import { products } from '../utils/products';
 
-const ProductsContext = createContext();
 const featured = products.filter((item) => item.featured === true);
 
 const initialState = {
@@ -11,6 +10,8 @@ const initialState = {
   products: products,
   featured_products: featured,
 };
+
+const ProductsContext = createContext();
 
 const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);

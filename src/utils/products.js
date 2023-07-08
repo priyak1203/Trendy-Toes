@@ -32,12 +32,12 @@ export const products = [
     name: 'Harpa Solid Heels',
     price: 16939,
     image: '/images/HarpaBlack.jpg',
-    colors: ['#000', '#d4af37', '#fff'],
+    colors: ['#000', '#d4af37'],
     brand: 'Aldo',
     description:
       'Add a sophisticated touch to your footwear options with this black pair of heels from Aldo. Made with care from synthetic, it features a rubber sole and is accented with a slip-on closure. It ensures that you do not trip or fall on any surface. Team it with a pair of denim and a t-shirt on any casual occasion',
 
-    category: 'Heels',
+    category: 'heels',
     shipping: false,
     featured: true,
   },
@@ -47,7 +47,7 @@ export const products = [
     name: 'DYNAMIC VI Walking Shoes',
     price: 8469,
     image: '/images/DynamicBlue.jpg',
-    colors: ['#9bb2ed', '#fcd6a6'],
+    colors: ['#9bb2ed'],
     brand: 'Sketchers',
     description:
       'Up your performance with this blue pair of sports shoes from Skechers. Made from mesh, it features an ombre print and is enhanced with lace-up closure. It ensures optimal stability while providing energizing cushioning. Team it up with a t-shirt and a pair of shorts for a sporty look',
@@ -61,7 +61,7 @@ export const products = [
     name: 'DYNAMIC VI Walking Shoes',
     price: 8469,
     image: '/images/DynamicBlue.jpg',
-    colors: ['#9bb2ed', '#fcd6a6'],
+    colors: ['#9bb2ed'],
     brand: 'Sketchers',
     description:
       'Up your performance with this blue pair of sports shoes from Skechers. Made from mesh, it features an ombre print and is enhanced with lace-up closure. It ensures optimal stability while providing energizing cushioning. Team it up with a t-shirt and a pair of shorts for a sporty look',
