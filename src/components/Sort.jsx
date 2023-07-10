@@ -5,15 +5,12 @@ import { useFilterContext } from '../context/filter_context';
 const Sort = () => {
   const {
     filtered_products: products,
-    sort,
     grid_view,
     setGridView,
     setListView,
+    sort,
+    updateSort,
   } = useFilterContext();
-
-  const updateSort = (e) => {
-    console.log(e.target.value, e.target.name);
-  };
 
   return (
     <Wrapper>
@@ -46,8 +43,8 @@ const Sort = () => {
         >
           <option value="price-lowest">price (lowest)</option>
           <option value="price-highest">price (highest)</option>
-          <option value="a-z">name (a-z)</option>
-          <option value="z-a">name (z-a)</option>
+          <option value="name-a">name (a-z)</option>
+          <option value="name-z">name (z-a)</option>
         </select>
       </form>
     </Wrapper>
