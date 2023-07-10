@@ -16,12 +16,9 @@ const Filters = () => {
       shipping,
     },
     all_products,
+    updateFilters,
+    clearFilters,
   } = useFilterContext();
-
-  const updateFilters = (e) => {
-    const { name, value } = e.target;
-    console.log({ name, value });
-  };
 
   const categories = getUniqueValues(all_products, 'category');
   const brands = getUniqueValues(all_products, 'brand');
@@ -111,8 +108,7 @@ const Filters = () => {
                     style={{ background: c }}
                     className={c === color ? 'color-btn active' : 'color-btn'}
                   >
-                    <FaCheck />
-                    {/* {c === color ? <FaCheck /> : null} */}
+                    {c === color ? <FaCheck /> : null}
                   </button>
                 );
               })}
@@ -125,7 +121,7 @@ const Filters = () => {
             <p className="price">{formatPrice(price)}</p>
             <input
               type="range"
-              name={price}
+              name="price"
               min={min_price}
               max={max_price}
               value={price}
@@ -146,7 +142,7 @@ const Filters = () => {
           </div>
           {/* end of shipping */}
         </form>
-        <button type="button" className="clear-btn">
+        <button type="button" className="clear-btn" onClick={clearFilters}>
           clear filters
         </button>
       </div>

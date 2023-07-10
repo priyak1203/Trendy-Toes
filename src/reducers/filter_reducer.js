@@ -1,8 +1,11 @@
 import {
+  CLEAR_FILTERS,
+  FILTER_PRODUCTS,
   LOAD_PRODUCTS,
   SET_GRIDVIEW,
   SET_LISTVIEW,
   SORT_PRODUCTS,
+  UPDATE_FILTERS,
   UPDATE_SORT,
 } from '../actions';
 
@@ -53,6 +56,74 @@ const filter_reducer = (state, { type, payload }) => {
       }
 
       return { ...state, filtered_products: temp_products };
+    }
+
+    case UPDATE_FILTERS: {
+      const { name, value } = payload;
+      return { ...state, filters: { ...state.filters, [name]: value } };
+    }
+
+    case FILTER_PRODUCTS: {
+      const { all_products } = state;
+      const { text, category, brand, color, price, shipping } = state.filters;
+
+      let temp_products = [...all_products];
+
+      // Filtering
+      // text
+      if (text) {
+        temp_products = temp_products.filter((product) =>
+          product.name.toLowerCase().startsWith(text)
+        );
+      }
+
+      // category
+      if (category !== 'all') {
+        temp_products = temp_products.filter(
+          (product) => product.category === category
+        );
+      }
+
+      // brand
+      if (brand !== 'all') {
+        temp_products = temp_products.filter(
+          (product) => product.brand === brand
+        );
+      }
+
+      // color
+      if (color !== 'all') {
+        temp_products = temp_products.filter((product) =>
+          product.colors.find((c) => c === color)
+        );
+      }
+
+      // price
+      temp_products = temp_products.filter((product) => product.price <= price);
+
+      // shipping
+      if (shipping) {
+        temp_products = temp_products.filter(
+          (product) => product.shipping === true
+        );
+      }
+
+      return { ...state, filtered_products: temp_products };
+    }
+
+    case CLEAR_FILTERS: {
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          text: '',
+          category: 'all',
+          brand: 'all',
+          color: 'all',
+          price: state.filters.max_price,
+          shipping: false,
+        },
+      };
     }
 
     default: {
