@@ -2,9 +2,23 @@ import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { useProductsContext } from '../context/products_context';
 import Product from './Product';
+import Loading from './Loading';
+import Error from './Error';
 
 const FeaturedProducts = () => {
-  const { featured_products: featured } = useProductsContext();
+  const {
+    products_loading: loading,
+    products_error: error,
+    featured_products: featured,
+  } = useProductsContext();
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <Error />;
+  }
 
   return (
     <Wrapper className="section">

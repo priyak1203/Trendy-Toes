@@ -1,8 +1,10 @@
 export { default as Contact } from './Contact';
+export { default as Error } from './Error';
 export { default as FeaturedProducts } from './FeaturedProducts';
 export { default as Filters } from './Filters';
 export { default as Footer } from './Footer';
 export { default as Hero } from './Hero';
+export { default as Loading } from './Loading';
 export { default as Navbar } from './Navbar';
 export { default as PageHero } from './PageHero';
 export { default as ProductsList } from './ProductsList';
