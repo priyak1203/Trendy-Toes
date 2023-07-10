@@ -1,21 +1,21 @@
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import { styled } from 'styled-components';
 
-const AmoutButtons = ({ amount }) => {
+const AmountButtons = ({ amount, increase, decrease }) => {
   return (
     <Wrapper>
-      <button type="button">
+      <button type="button" onClick={decrease}>
         <FaMinus />
       </button>
       <h2>{amount}</h2>
-      <button type="button">
+      <button type="button" onClick={increase}>
         <FaPlus />
       </button>
     </Wrapper>
   );
 };
 
-export default AmoutButtons;
+export default AmountButtons;
 
 const Wrapper = styled.div`
   width: 140px;

@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from 'react';
 import reducer from '../reducers/filter_reducer';
-
 import { useProductsContext } from './products_context';
 import {
   CLEAR_FILTERS,

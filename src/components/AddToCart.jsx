@@ -1,14 +1,36 @@
 import { useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 import { styled } from 'styled-components';
-import AmoutButtons from './AmoutButtons';
+import AmoutButtons from './AmountButtons';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../context/cart_context';
 
 const AddToCart = ({ product }) => {
-  const { colors } = product;
+  const { colors, id, stock } = product;
+  const { addToCart } = useCartContext();
 
   const [mainColor, setMainColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
+
+  const increaseAmount = () => {
+    setAmount((oldAmount) => {
+      let tempAmount = oldAmount + 1;
+      if (tempAmount > stock) {
+        tempAmount = stock;
+      }
+      return tempAmount;
+    });
+  };
+
+  const decreaseAmount = () => {
+    setAmount((oldAmount) => {
+      let tempAmount = oldAmount - 1;
+      if (tempAmount < 1) {
+        tempAmount = 1;
+      }
+      return tempAmount;
+    });
+  };
 
   return (
     <Wrapper>
@@ -32,8 +54,16 @@ const AddToCart = ({ product }) => {
         </div>
       </div>
       <div className="btn-container">
-        <AmoutButtons amount={amount} />
-        <Link to="/cart" className="btn">
+        <AmoutButtons
+          amount={amount}
+          increase={increaseAmount}
+          decrease={decreaseAmount}
+        />
+        <Link
+          to="/cart"
+          className="btn"
+          onClick={() => addToCart(id, amount, mainColor, product)}
+        >
           add to cart
         </Link>
       </div>
