@@ -1,3 +1,4 @@
+export { default as AddToCart } from './AddToCart';
 export { default as Contact } from './Contact';
 export { default as Error } from './Error';
 export { default as FeaturedProducts } from './FeaturedProducts';
@@ -7,7 +8,9 @@ export { default as Hero } from './Hero';
 export { default as Loading } from './Loading';
 export { default as Navbar } from './Navbar';
 export { default as PageHero } from './PageHero';
+export { default as ProductImages } from './ProductImages';
 export { default as ProductsList } from './ProductsList';
 export { default as Services } from './Services';
 export { default as Sidebar } from './Sidebar';
 export { default as Sort } from './Sort';
+export { default as Stars } from './Stars';
