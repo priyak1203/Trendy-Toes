@@ -1,13 +1,12 @@
 import { createContext, useContext, useEffect, useReducer } from 'react';
 import reducer from '../reducers/filter_reducer';
-import { products } from '../utils/products';
 
-let maxPrice = products.map((item) => item.price);
-maxPrice = Math.max(...maxPrice);
+import { useProductsContext } from './products_context';
+import { LOAD_PRODUCTS } from '../actions';
 
 const initialState = {
-  filtered_products: products,
-  all_products: products,
+  filtered_products: [],
+  all_products: [],
   grid_view: true,
   sort: 'price-lowest',
   filters: {
@@ -16,8 +15,8 @@ const initialState = {
     brand: 'all',
     color: 'all',
     min_price: 0,
-    max_price: maxPrice,
-    price: maxPrice,
+    max_price: 0,
+    price: 0,
     shipping: false,
   },
 };
@@ -25,7 +24,12 @@ const initialState = {
 const FilterContext = createContext();
 
 const FliterProvider = ({ children }) => {
+  const { products } = useProductsContext();
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    dispatch({ type: LOAD_PRODUCTS, payload: { products } });
+  }, [products]);
 
   return (
     <FilterContext.Provider value={{ ...state }}>

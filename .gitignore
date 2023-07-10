@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+
+*.mjs
+
+
+.env
+# Local Netlify folder
+.netlify
