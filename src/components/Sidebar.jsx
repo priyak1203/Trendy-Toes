@@ -7,7 +7,7 @@ import CartButtons from './CartButtons';
 import { useProductsContext } from '../context/products_context';
 
 const Sidebar = () => {
-  const myUser = false;
+  const myUser = true;
   const { isSidebarOpen, closeSidebar } = useProductsContext();
 
   return (
@@ -24,13 +24,17 @@ const Sidebar = () => {
             const { id, text, url } = link;
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
               </li>
             );
           })}
           {myUser && (
             <li>
-              <Link to="checkout">checkout</Link>
+              <Link to="checkout" onClick={closeSidebar}>
+                checkout
+              </Link>
             </li>
           )}
         </ul>
