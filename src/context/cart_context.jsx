@@ -5,7 +5,7 @@ import { ADD_TO_CART } from '../actions';
 const initialState = {
   cart: [],
   total_items: 3,
-  total_amount: 0,
+  total_amount: 12522,
   shipping_fee: 534,
 };
 

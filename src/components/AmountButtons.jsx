@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 
 const AmountButtons = ({ amount, increase, decrease }) => {
   return (
-    <Wrapper>
+    <Wrapper className="amount-btns">
       <button type="button" onClick={decrease}>
         <FaMinus />
       </button>

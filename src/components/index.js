@@ -1,4 +1,5 @@
 export { default as AddToCart } from './AddToCart';
+export { default as CartContent } from './CartContent';
 export { default as Contact } from './Contact';
 export { default as Error } from './Error';
 export { default as FeaturedProducts } from './FeaturedProducts';
