@@ -5,9 +5,10 @@ import { styled } from 'styled-components';
 import Logo from './Logo';
 import { FaBars } from 'react-icons/fa';
 import { useProductsContext } from '../context/products_context';
+import { useUserContext } from '../context/user_context';
 
 const Navbar = () => {
-  const myUser = true;
+  const { myUser } = useUserContext();
   const { openSidebar } = useProductsContext();
 
   return (

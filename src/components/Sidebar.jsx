@@ -5,9 +5,10 @@ import { links } from '../utils/constants';
 import { Link } from 'react-router-dom';
 import CartButtons from './CartButtons';
 import { useProductsContext } from '../context/products_context';
+import { useUserContext } from '../context/user_context';
 
 const Sidebar = () => {
-  const myUser = true;
+  const { myUser } = useUserContext();
   const { isSidebarOpen, closeSidebar } = useProductsContext();
 
   return (
