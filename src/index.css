@@ -3,18 +3,18 @@
 ================================== */
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: #71592d;
-  --clr-primary-2: #876a36;
-  --clr-primary-3: #9e7c3f;
-  --clr-primary-4: #cb9f51;
+  --clr-primary-1: #860f30;
+  --clr-primary-2: #9a1236;
+  --clr-primary-3: #ad143d;
+  --clr-primary-4: #c01644;
   /* primary/main color */
-  --clr-primary-5: #e1b15a;
+  --clr-primary-5: #c62d57;
   /* lighter shades of primary color */
-  --clr-primary-6: #e7c17b;
-  --clr-primary-7: #edd09c;
-  --clr-primary-8: #f0d8ad;
-  --clr-primary-9: #f3e0bd;
-  --clr-primary-10: #f9efde;
+  --clr-primary-6: #e08ba2;
+  --clr-primary-7: #e6a2b4;
+  --clr-primary-8: #ecb9c7;
+  --clr-primary-9: #f2d0da;
+  --clr-primary-10: #f9e8ec;
 
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 16%);
