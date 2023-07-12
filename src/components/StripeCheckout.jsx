@@ -10,6 +10,7 @@ import { styled } from 'styled-components';
 import { useCartContext } from '../context/cart_context';
 import { useUserContext } from '../context/user_context';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const stripePromise = loadStripe(import.meta.env.VITE_APP_STRIPE_PUBLIC_KEY);
 
@@ -28,7 +29,14 @@ const CheckoutForm = () => {
   const elements = useElements();
 
   const createPaymentIntent = async () => {
-    console.log('hello from stripe checkout');
+    try {
+      const response = await axios.post(
+        `/.netlify/functions/create-payment-intent`,
+        JSON.stringify({ cart, shipping_fee, total_amount })
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
