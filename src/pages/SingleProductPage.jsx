@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useProductsContext } from '../context/products_context';
 import { useEffect } from 'react';
 import { single_product_url as url } from '../utils/constants';
@@ -15,6 +15,8 @@ import { formatPrice } from '../utils/helpers';
 
 const SingleProductPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const {
     fetchSingleProduct,
     single_product: product,
@@ -26,6 +28,15 @@ const SingleProductPage = () => {
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
   }, [id]);
+
+  // redirect after 3s in case of an error
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        navigate('/');
+      }, 3000);
+    }
+  }, [error]);
 
   if (loading) {
     return <Loading />;
