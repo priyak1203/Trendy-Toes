@@ -1,7 +1,40 @@
 import { styled } from 'styled-components';
-import { Filters, PageHero, ProductsList, Sort } from '../components';
+import {
+  Error,
+  Filters,
+  Loading,
+  PageHero,
+  ProductsList,
+  Sort,
+} from '../components';
+import { useProductsContext } from '../context/products_context';
 
 const ProductsPage = () => {
+  const { products_loading: loading, products_error: error } =
+    useProductsContext();
+
+  if (loading) {
+    return (
+      <main>
+        <PageHero title="products" />
+        <Wrapper className="page">
+          <Loading />;
+        </Wrapper>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main>
+        <PageHero title="products" />
+        <Wrapper className="page">
+          <Error />
+        </Wrapper>
+      </main>
+    );
+  }
+
   return (
     <main>
       <PageHero title="products" />
