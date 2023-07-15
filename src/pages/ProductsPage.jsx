@@ -64,4 +64,7 @@ const Wrapper = styled.section`
       grid-template-columns: 200px 1fr;
     }
   }
+  .loading {
+    margin-top: 5rem;
+  }
 `;
