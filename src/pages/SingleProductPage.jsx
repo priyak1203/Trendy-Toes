@@ -39,11 +39,19 @@ const SingleProductPage = () => {
   }, [error]);
 
   if (loading) {
-    return <Loading />;
+    return (
+      <Wrapper className="page-100">
+        <Loading />
+      </Wrapper>
+    );
   }
 
   if (error) {
-    return <Error />;
+    return (
+      <Wrapper className="page-100">
+        <Error />
+      </Wrapper>
+    );
   }
 
   const {
@@ -126,5 +134,8 @@ const Wrapper = styled.main`
     .price {
       font-size: 1.25rem;
     }
+  }
+  .loading {
+    margin-top: 5rem;
   }
 `;
