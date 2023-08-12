@@ -40,7 +40,6 @@ exports.handler = async function () {
       body: JSON.stringify(products),
     };
   } catch (error) {
-    console.log(error);
     return {
       statusCode: 500,
       body: JSON.stringify({ msg: 'There was an error' }),
