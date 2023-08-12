@@ -1,4 +1,5 @@
-const Airtable = require('airtable-node');
+// const Airtable = require('airtable-node');
+import Airtable from 'airtable-node';
 
 const airtable = new Airtable({
   apiKey: process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN,
