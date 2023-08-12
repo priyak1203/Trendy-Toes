@@ -2,7 +2,7 @@
 
 const stripe = require('stripe')(process.env.VITE_APP_STRIPE_SECRET_KEY);
 
-export const handler = async function (event, context) {
+exports.handler = async function (event, context) {
   if (event.body) {
     const { cart, shipping_fee, total_amount } = JSON.parse(event.body);
 
