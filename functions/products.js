@@ -2,7 +2,7 @@
 
 const airtable = require('./airtable-config');
 
-export const handler = async function () {
+exports.handler = async function () {
   try {
     const response = await airtable.list({ maxRecords: 200 });
 

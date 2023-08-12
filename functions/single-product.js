@@ -2,7 +2,7 @@
 
 const airtable = require('./airtable-config');
 
-export const handler = async function (event, context, cb) {
+exports.handler = async function (event, context, cb) {
   const { id } = event.queryStringParameters;
 
   if (id) {
