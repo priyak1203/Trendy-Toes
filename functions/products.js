@@ -1,6 +1,6 @@
 // domain/.netlify/functions/single-product
 
-import airtable from './airtable-config.js';
+const airtable = require('./airtable-config');
 
 export const handler = async function () {
   try {
