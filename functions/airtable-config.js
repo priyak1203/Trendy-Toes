@@ -6,4 +6,4 @@ const airtable = new Airtable({
   .base(process.env.AIRTABLE_BASE)
   .table(process.env.AIRTABLE_TABLE);
 
-module.exports = airtable;
+export default airtable;

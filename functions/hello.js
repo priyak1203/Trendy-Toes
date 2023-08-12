@@ -1,6 +1,6 @@
 // domain/.netlify/functions/hello
 
-exports.handler = async function (event, context) {
+export const handler = async function (event, context) {
   return {
     statusCode: 200,
     body: JSON.stringify({ msg: ' Hello World' }),

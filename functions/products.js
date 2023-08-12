@@ -1,8 +1,8 @@
 // domain/.netlify/functions/single-product
 
-const airtable = require('./airtable-config');
+import airtable from './airtable-config.js';
 
-exports.handler = async function () {
+export const handler = async function () {
   try {
     const response = await airtable.list({ maxRecords: 200 });
 
